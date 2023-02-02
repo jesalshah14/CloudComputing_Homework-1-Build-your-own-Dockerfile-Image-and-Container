@@ -15,34 +15,34 @@ API Urls for backend Microservices & services provided.
     To run with         : curl http://127.0.0.1:5001/weather?zip=94550
 
 
-##Service1
+## Service1
 
-####Steps to create service & run 
+#### Steps to create service & run 
 1.created service1.py file with code
 2.cmd to run the app locally  : python service1.py
 3.To test it in broswer       : http://localhost:5000/zipcode?city=Chicago
 4.To test it in curl          : curl http://127.0.0.1:5000/zipcode?city=Chicago
                 
-####Steps to dockerize the service
+#### Steps to dockerize the service
 1.created docker file with code
 2.cmd to build : docker build -t zipcodeservice .
 3.cmd to run   : docker run -p 5000:5000 zipcodeservice
 4.cmd to check images: docker images
 5.cmd to check containers running: docker ps
 
-##Service2
+## Service2
 
-####Steps to create service & run 
+#### Steps to create service & run 
 1.created service2.py file with code
 2.cmd to run the app locally  : python service2.py
 3.To test it in broswer       : http://localhost:5000/weather?zip=94530
 4.To test it in curl          : curl http://127.0.0.1:5000/weather?zip=94530
                 
-####Steps to dockerize the service & run 
+#### Steps to dockerize the service & run 
 1.created docker file with code
 2.cmd to build : docker build -t zipcodeservice .
 3.cmd to run   : docker run -p 5000:5000 zipcodeservice
 4.cmd to check images: docker images
 5.cmd to check containers running: docker ps
          
-# For screenshots : please refer the word document.
+##### For screenshots : please refer the word document.
