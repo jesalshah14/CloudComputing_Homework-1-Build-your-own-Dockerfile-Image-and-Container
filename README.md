@@ -43,4 +43,4 @@ Git-Repo for solution code  : https://github.com/jesalshah14/CloudComputing_Home
 4.cmd to check images: docker images<br/>
 5.cmd to check containers running: docker ps<br/>
          
-###For screenshots : please refer the word document.
+### For screenshots : please refer the word document.
