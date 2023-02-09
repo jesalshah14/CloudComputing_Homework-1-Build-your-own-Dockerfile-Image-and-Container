@@ -27,7 +27,7 @@ Git-Repo for solution code  : https://github.com/jesalshah14/CloudComputing_Home
 #### Steps to dockerize the service
 1.created docker file with code<br/>
 2.cmd to build : docker build -t zip .<br/>
-3.cmd to run   : docker run --network mynet -p 5000:5000 --name zip zip<br/>     ---- running on network 
+3.cmd to run   : docker run --network mynet -p 5000:5000 --name zip zip<br/>    
 4.cmd to check images: docker images<br/>
 5.cmd to check containers running: docker ps<br/>
 
