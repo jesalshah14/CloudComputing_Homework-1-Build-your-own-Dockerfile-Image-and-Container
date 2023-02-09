@@ -3,7 +3,7 @@
 Git-Repo for solution code  : https://github.com/jesalshah14/CloudComputing_Homework-1-Build-your-own-Dockerfile-Image-and-Container.git
 
 #### API Urls for backend Microservices & services provided.
-1. Service1  - Fetch zipcode based on city name<br/>
+1. Service1  - Fetch weather based on city name<br/>
 
     To run in browser   : http://localhost:5000/zip/Chicago<br/>
     To run with curl    : curl http://127.0.0.1:5000/zip/Chicago<br/>
