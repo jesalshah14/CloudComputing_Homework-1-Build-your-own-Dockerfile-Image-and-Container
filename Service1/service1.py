@@ -1,23 +1,34 @@
+# zip_api.py
 from flask import Flask, request
+import requests
+
 app = Flask(__name__)
 
-@app.route('/zipcode', methods=['GET'])
-def get_zip_code():
-    
-    ZIP_CODES = {
+# Example dictionary to store zip codes for cities
+zip_codes = {
     "New York": "10001",
     "Los Angeles": "90001",
     "Chicago": "60601",
-    "Newark" : "94560"
+    "Newark" : "94560",
+    "Fremont" : "94550"
 }
 
-    city = request.args.get('city')
-    if city is None:
-        return " Please provide a city name", 400
-    zip_code = f" Zip code for {city}  is {ZIP_CODES.get(city)}"
-    if zip_code is None:
-        return f" Zip code for {city} not found", 404
-    return zip_code
+@app.route('/zip/<string:city>', methods=['GET'])
+def zip_api(city):
+    if city in zip_codes:
+        zip_code = str(zip_codes[city])
+        # Send a request to the second API to get the weather for the zip code
+        weather_api_response = requests.get(f'http://weatherservice:5001/weather/{zip_code}')
+        weather = weather_api_response.text
+        return f' The weather in {city}({zip_code}) is   - <b>{weather}'
+    else:
+        return 'City not found'
 
 if __name__ == '__main__':
     app.run()
+    
+    
+    
+    # http://localhost:5001/weather/10001  http://localhost:5001/weather?zip=94560
+    
+    # http://localhost:5000/zip/New York      http://localhost:5000/zipcode?city=Chicago

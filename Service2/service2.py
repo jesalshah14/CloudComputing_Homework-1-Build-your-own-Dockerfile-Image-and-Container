@@ -1,31 +1,22 @@
+# weather_api.py
 from flask import Flask, request
-
 app = Flask(__name__)
 
-@app.route('/weather', methods=['GET'])
-def weather():
-    zip_code = request.args.get('zip')
-    if zip_code:
-        weather_data = get_weather_data(zip_code)
-        return weather_data, 200
-    else:
-        return 'Error: No zip code provided', 400
+# Example dictionary to store weather information for zip codes
+weather = {
+    '10001': 'Description : Clear Sky, Temperature: 72, Humidity:30, Main:Clear',
+    '60601': 'Description : Freezing Rain, Temperature: 50, Humidity:20, Main:Rainy',
+    '90001': 'Description : Snow Showers, Temperature: 80, Humidity:25, Main:Snow',
+    '94560': 'Description : Partly Cloud, Temperature: 40, Humidity:18, Main:Cloudy',
+    '94550': 'Description : Mostly Sunny, Temperature: 90, Humidity:18, Main:Sunny'
+}
 
-def get_weather_data(zip_code):
-    if zip_code == '94560':
-        weathearData = ' "weather": [{"description": "Clear Sky","temperature": "72","humidity": 30,"main": "Clear"}]'
-    elif zip_code == '90001':
-        weathearData = ' "weather": [{"description": "Rainy/FrezingRain","temperature": "80","humidity": 60,"main": "Rainy"}]'
-    elif zip_code == '10001':
-        weathearData = ' "weather": [{"description": "Snow Showers","temperature": "50","humidity": 50,"main": "Snow"}]'
-    elif zip_code == '60601':
-        weathearData = ' "weather": [{"description": "Partly Cloudy","temperature": "10","humidity": 10,"main": "Cloudy"}]'
-    elif zip_code == '94550':
-        weathearData = ' "weather": [{"description": "Mostly Sunny","temperature": "85","humidity": 20,"main": "Sunny"}]'
+@app.route('/weather/<string:zip_code>', methods=['GET'])
+def weather_api(zip_code):
+    if zip_code in weather:
+        return weather[zip_code]
     else:
-        weathearData ='No Information'
-    
-    return weathearData
+        return 'Weather information not available for the given zip code'
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=5001)

@@ -1,6 +1,6 @@
 ### Homework-1-Build-your-own-Dockerfile-Image-and-Container
 
-Git-Repo for solution code  : https://github.com/jesalshah14/CloudComputing_Homework-1-Build-your-own-Dockerfile-Image-and-Container
+Git-Repo for solution code  : https://github.com/jesalshah14/CloudComputing_Homework-1-Build-your-own-Dockerfile-Image-and-Container.git
 
 #### API Urls for backend Microservices & services provided.
 1. Service1  - Fetch zipcode based on city name<br/>
